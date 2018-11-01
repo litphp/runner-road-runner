@@ -1,0 +1,29 @@
+{
+    "name": "litphp/runner-road-runner",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "McFog Wang",
+            "email": "mcfogw@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Lit\\Runner\\RoadRunner\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "require": {
+        "litphp/bolt": "^0.9@dev",
+        "spiral/roadrunner": "^1.2"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.9.x-dev"
+        }
+    }
+}
