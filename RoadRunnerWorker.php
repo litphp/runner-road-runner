@@ -43,7 +43,7 @@ class RoadRunnerWorker
             ? $config
             : BoltContainerConfiguration::createContainer($config + RoadRunnerConfiguration::default());
 
-        Factory::of($container)->get(static::class)->loop();
+        Factory::of($container)->getOrProduce(static::class)->loop();
         exit(0);
     }
 
