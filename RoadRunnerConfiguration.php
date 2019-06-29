@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Lit\Runner\RoadRunner;
 
-use Http\Factory\Diactoros\ResponseFactory;
 use Lit\Air\Configurator as C;
 use Lit\Bolt\BoltApp;
 use Psr\Http\Message\ResponseFactoryInterface;
@@ -12,6 +11,7 @@ use Spiral\Goridge\RelayInterface;
 use Spiral\Goridge\StreamRelay;
 use Spiral\RoadRunner\PSR7Client;
 use Spiral\RoadRunner\Worker;
+use Zend\Diactoros\ResponseFactory;
 
 class RoadRunnerConfiguration
 {
