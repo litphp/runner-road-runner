@@ -13,8 +13,16 @@ use Spiral\RoadRunner\PSR7Client;
 use Spiral\RoadRunner\Worker;
 use Zend\Diactoros\ResponseFactory;
 
+/**
+ * roadrunner configuration class
+ */
 class RoadRunnerConfiguration
 {
+    /**
+     * Return default configuration for roadrunner worker
+     *
+     * @return array
+     */
     public static function default(): array
     {
         return [
