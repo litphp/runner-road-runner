@@ -10,6 +10,9 @@ use Lit\Bolt\BoltContainerConfiguration;
 use Psr\Container\ContainerInterface;
 use Spiral\RoadRunner\PSR7Client;
 
+/**
+ * roadrunner worker
+ */
 class RoadRunnerWorker
 {
     const EVENT_LOOP_FINAL = 'rr.request.final';
@@ -37,6 +40,11 @@ class RoadRunnerWorker
         $this->maxRequest = $maxRequest;
     }
 
+    /**
+     * run a bolt app as roadrunner worker
+     *
+     * @param array $config The application configuration.
+     */
     public static function run($config = [])
     {
         $container = $config instanceof ContainerInterface
@@ -51,7 +59,7 @@ class RoadRunnerWorker
         exit(0);
     }
 
-    public function loop()
+    protected function loop()
     {
         $reqCount = 0;
         while ($req = $this->psr7->acceptRequest()) {
