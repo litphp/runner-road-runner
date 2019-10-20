@@ -15,10 +15,6 @@ use Spiral\RoadRunner\PSR7Client;
  */
 class RoadRunnerWorker
 {
-    const EVENT_LOOP_FINAL = 'rr.request.final';
-    const EVENT_LOOP_AFTER_RESPOND = 'rr.request.after_respond';
-    const EVENT_LOOP_ERROR = 'rr.request.error';
-
     /**
      * @var PSR7Client
      */
@@ -67,12 +63,8 @@ class RoadRunnerWorker
                 $resp = $this->app->handle($req);
 
                 $this->psr7->respond($resp);
-                $this->app->getEventsHub()->dispatch(static::EVENT_LOOP_AFTER_RESPOND);
             } catch (\Throwable $e) {
                 $this->psr7->getWorker()->error((string)$e);
-                $this->app->getEventsHub()->dispatch(static::EVENT_LOOP_ERROR);
-            } finally {
-                $this->app->getEventsHub()->dispatch(static::EVENT_LOOP_FINAL);
             }
 
             $reqCount++;
