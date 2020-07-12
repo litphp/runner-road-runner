@@ -18,8 +18,8 @@
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "litphp/bolt": "^0.9",
-        "spiral/roadrunner": "^1.2"
+        "litphp/bolt": "^1.0-dev",
+        "spiral/roadrunner": "^1.8"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.5",
@@ -29,7 +29,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.9.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     }
 }
